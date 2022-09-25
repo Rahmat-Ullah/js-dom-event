@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DOM Summary</title>
+</head>
+<body>
+    <h1>Final DOM event handler</h1>
+    <h3 id="default-text">Defauld text</h3>
+    <p id="para">Defaut input text</p>
+    <input id="input" type="text">
+    <button id="update">Update</button>
+    <br>
+    <br>
+    <button onclick="handleOnClick()">Add onclick</button>
+    <button id="another">Add onclick1</button>
+
+    <script>
+        function handleOnClick(){
+            const handleText = document.getElementById('default-text');
+            handleText.innerText = 'Handled by function attached on onclick attribute';
+        }
+
+        // option 2
+        document.getElementById('another').addEventListener('click', function(){
+            const handlerStatus = document.getElementById('default-text');
+            handlerStatus.innerText = 'text updated by add event listener';
+        })
+
+        // option 2 recap
+        document.getElementById('update').addEventListener('click', function(){
+            const inputField = document.getElementById('input');
+            const inputText = inputField.value;
+
+            const p = document.getElementById('para');
+            p.innerText = inputText;
+            inputField.value = ' ';
+        })
+    </script>
+</body>
+</html>
