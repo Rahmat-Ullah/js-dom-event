@@ -24,6 +24,26 @@
         <button id="btn-post">Post</button>
     </div>
     
-    
+    <script>
+
+        // step: 1 add eventlistener to the post button
+        document.getElementById('btn-post').addEventListener('click', function () {
+            // step 2: get the comment inside the textarea
+            const commentBox = document.getElementById('new-comment');
+            const newComment = commentBox.value;
+            console.log(newComment);
+
+            //step 3: set the comment inside the somment container
+            // 1. get thecomment container
+            //2. create a new element
+            // 3. set the text of the comment as innertext of a tag
+            //4. add the p to the comment container
+            const commentContainer = document.getElementById('comment-container');
+            const p = document.createElement('p');
+            p.innerText = newComment;
+            commentContainer.appendChild(p);
+            commentBox.value = (' ');
+        })
+    </script>
 </body>
 </html>
