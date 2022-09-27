@@ -27,6 +27,7 @@
     <script>
 
         // step: 1 add eventlistener to the post button
+        
         document.getElementById('btn-post').addEventListener('click', function () {
             // step 2: get the comment inside the textarea
             const commentBox = document.getElementById('new-comment');
@@ -42,7 +43,22 @@
             const p = document.createElement('p');
             p.innerText = newComment;
             commentContainer.appendChild(p);
+
+            //step 4: clear the comment box
             commentBox.value = (' ');
+
+
+            document.getElementById('btn-post').addEventListener('click', function () {
+            const commentBox = document.getElementById('new-comment');
+
+            const newComment = commentBox.value;
+
+            const commentContainer = document.getElementById('comment-container');
+            const p = document.createElement('p');
+            p.innerText = newComment;
+            commentContainer.appendChild(p);
+            })
+
         })
     </script>
 </body>
